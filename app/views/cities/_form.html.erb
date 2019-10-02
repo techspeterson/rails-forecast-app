@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :state_id %>
-    <%= form.select :state_id, options_for_select( State.all.collect { |u| [u.name, u.id] }, :selected => city.state_id ) %>
+    <%= form.select :state_id, options_for_select( State.order('name').all.collect { |u| [u.name, u.id] }, :selected => city.state_id ) %>
   </div>
 
   <div class="actions">

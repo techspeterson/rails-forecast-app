@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @states.each do |state| %>
+    <% @states.order('name').each do |state| %>
       <tr>
         <td><%= state.name %></td>
         <td><%= state.warnings %></td>
