@@ -5,7 +5,7 @@ class ForecastsController < ApplicationController
   # GET /forecasts
   # GET /forecasts.json
   def index
-    @forecasts = Forecast.order('date').select {|forecast| forecast.city_id == @city.id}
+    @forecasts = Forecast.order('date').where('city_id = ?', @city.id)
   end
 
   # GET /forecasts/1
